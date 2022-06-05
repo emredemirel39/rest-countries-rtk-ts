@@ -17,7 +17,11 @@ const CountryList = () => {
         {countries.data && (
             countries.data
             .filter(country => country.name.toLowerCase().includes(countries.search.toLowerCase()))
-            .map(country =><Link to={`/${country.alpha3Code}`}> <h1 key={country.alpha3Code}>{country.name}</h1></Link>)
+            .map(country => (
+              <Link key={country.alpha3Code} to={`/${country.alpha3Code}`}> 
+                <h1>{country.name}</h1>
+              </Link>
+            ))
         )}
     </div>
   )
