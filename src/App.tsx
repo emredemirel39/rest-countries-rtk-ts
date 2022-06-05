@@ -1,26 +1,16 @@
-import { useEffect } from "react";
-import { CountryType, fetchCountries, sabir } from "./features/countriesSlice";
-import store, { useAppDispatch, useAppSelector } from "./store";
+import { Route, Routes } from "react-router";
+import DetailsPage from "./views/DetailsPage";
+import HomePage from "./views/HomePage";
 
 function App() {
 
-const countries = useAppSelector(state => state.countries)
-const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCountries());
-  }, [dispatch])
-
-  const deneme = (country: CountryType) => {
-    dispatch(sabir(country));
-  }
-
   return (
-    <div className="App">
-      {countries.data && (
-        countries.data.map(country => <h1 key={country.alpha3Code}>{country.name}</h1>)
-      )}
-    </div>
+    <main className="App">
+      <Routes>
+        <Route path="/" element={<HomePage />}/>
+        <Route path="/:alpha3code" element={<DetailsPage />}/>
+      </Routes>
+    </main>
   );
 }
 

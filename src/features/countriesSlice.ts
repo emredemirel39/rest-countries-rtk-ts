@@ -3,12 +3,14 @@ import axios from "axios";
 
 interface ICountryState {
     data: null | CountryType[],
+    search: string,
     loading: boolean,
     error: string
 };
 
 const initialState: ICountryState = {
     data: null,
+    search: '',
     loading: false,
     error: ''
 };
@@ -25,8 +27,9 @@ const countriesSlice = createSlice({
     name: 'countries',
     initialState,
     reducers: {
-        sabir: (state, action) => {
-            console.log(action.payload.name)
+
+        searchCountries: (state, action: PayloadAction<string>) => {
+            state.search = action.payload.toLocaleLowerCase();
         }
     },
     extraReducers: (builder) => {
@@ -48,7 +51,9 @@ const countriesSlice = createSlice({
 
 export default countriesSlice.reducer;
 
-export const {sabir} = countriesSlice.actions;
+export const {
+    searchCountries
+} = countriesSlice.actions;
 
 export interface Currency {
     code: string;
