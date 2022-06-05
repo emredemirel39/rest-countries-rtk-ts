@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { CountryType, fetchCountries, sabir } from "./features/countriesSlice";
+import store, { useAppDispatch, useAppSelector } from "./store";
 
 function App() {
+
+const countries = useAppSelector(state => state.countries)
+const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCountries());
+  }, [dispatch])
+
+  const deneme = (country: CountryType) => {
+    dispatch(sabir(country));
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {countries.data && (
+        countries.data.map(country => <h1 key={country.alpha3Code}>{country.name}</h1>)
+      )}
     </div>
   );
 }
