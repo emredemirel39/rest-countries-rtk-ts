@@ -1,0 +1,31 @@
+.headerMain{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 4px 2%;
+    box-shadow: 1px 1px 0px rgba(193, 193, 193, 0.622);
+    position: fixed;
+    height: 46px;
+    
+    div:nth-child(1){
+        width: auto;
+        display: flex;
+        align-items: center;
+
+    }
+
+    div:nth-child(2){
+        width: 40rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.headerRight{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

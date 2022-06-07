@@ -1,0 +1,36 @@
+@import './colors.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dark {
+    .text{
+        color: $ligthFontColor;
+    }
+    .main-background{
+        background-color: $darkMainBgColor;
+    }
+    .secondary-background{
+        background-color: $darkSecondaryBgColor;
+    }
+}
+
+.light {
+    .text{
+        color: $darkFontColor;
+    }
+    .main-background{
+        background-color: $lightMainBgColor;
+    }
+    .secondary-background{
+        background-color: $lightSecondaryBgColor;
+    }
+}
+
+main{
+    width: 100vw;
+    
+}

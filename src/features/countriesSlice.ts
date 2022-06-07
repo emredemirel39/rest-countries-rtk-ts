@@ -55,6 +55,11 @@ export const {
     searchCountries
 } = countriesSlice.actions;
 
+export interface Flags {
+    svg: string;
+    png: string;
+}
+
 export interface Currency {
     code: string;
     name: string;
@@ -85,8 +90,6 @@ export interface Translations {
 export interface RegionalBloc {
     acronym: string;
     name: string;
-    otherNames: string[];
-    otherAcronyms: string[];
 }
 
 export interface CountryType {
@@ -97,21 +100,21 @@ export interface CountryType {
     callingCodes: string[];
     capital: string;
     altSpellings: string[];
+    subregion: string;
     region: string;
-    continent: string;
     population: number;
     latlng: number[];
     demonym: string;
     area: number;
-    gini: number;
     timezones: string[];
     borders: string[];
     nativeName: string;
     numericCode: string;
+    flags: Flags;
     currencies: Currency[];
     languages: Language[];
     translations: Translations;
-    flags: string[];
+    flag: string;
     regionalBlocs: RegionalBloc[];
     cioc: string;
     independent: boolean;

@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import countriesSlice from "../features/countriesSlice";
+import themeSlice from "../features/themeSlice";
 
 const store = configureStore({
     reducer: {
-        countries: countriesSlice
+        countries: countriesSlice,
+        theme: themeSlice
     }
 })
 

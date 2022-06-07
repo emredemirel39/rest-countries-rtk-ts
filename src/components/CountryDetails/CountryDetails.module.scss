@@ -1,0 +1,67 @@
+.countryDetails{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    height: fit-content;
+    padding: 2rem 1rem;
+    width: fit-content;
+    margin-top: 1rem;
+}
+
+.imageBox{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        width:100%;
+        object-fit:cover;
+
+    }
+}
+
+.infoCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 40rem;
+}
+
+.generalInfoBox{
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: left;
+}
+
+.borderInfoBox{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    div{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+
+        a{
+            all: unset;
+            min-width: 80px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            padding: 2px 6px;
+        }
+    }
+}

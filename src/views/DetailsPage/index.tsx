@@ -1,10 +1,12 @@
-import React from 'react'
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import CountryDetails from '../../components/CountryDetails';
 import { CountryType } from '../../features/countriesSlice';
 import { useAppSelector } from '../../store';
+import styles from './DetailsPage.module.scss';
 
 const DetailsPage = () => {
+  
+  const homePage = useNavigate()
 
   const { alpha3code } = useParams();
   const countries = useAppSelector(state => state.countries);
@@ -17,9 +19,13 @@ const DetailsPage = () => {
   
   const selectedCountry = countries.data?.find(country => country.alpha3Code === alpha3code) as CountryType;
 
-  // how we can use typescript with props
+  // We dont need to use props while we can use redux state management.
+  // But I want to show how we can use typescript with props
   return (
-    <div>
+    <div className={`${styles.detailsPage} main-background`}>
+        <div className={styles.btnBox}>
+          <button onClick={() => homePage('/')}>Go back to all countries</button>
+        </div>
         <CountryDetails country={selectedCountry}/>
     </div>
   )
